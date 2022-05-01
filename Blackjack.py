@@ -6,9 +6,12 @@ import sys, random as r
 
 
 def pick_cards(hand, count):
-    """Picks starting cards for player/comp, uses count variable for
-        number of cards drawn. Checks if the function is being called by
-        the computer [is_comp] and randomly choose 1 or 11 points if an ace is drawn."""
+    """
+    Picks starting cards for player/comp, uses count variable for
+    number of cards drawn. Checks if the function is being called by
+    the computer [is_comp] and randomly choose 1 or 11 points if an ace is drawn.
+    """
+    
     # flag for identifying if computer is calling function:
     is_comp = False
     if len(hand) > 0 and hand[0] == 'comp': is_comp = True
@@ -38,8 +41,11 @@ def pick_cards(hand, count):
 
 
 def hitting(player_cards, computer_cards, hit):
-    """Player/computer hits. If comp's hand sum is under 17,
-        draws until equal to or greater than 17."""
+    """
+    Player/computer hits. If comp's hand sum is under 17,
+    draws until equal to or greater than 17.
+    """
+    
     while hit:
         # if hit is true: the player wants another card
         player_cards = pick_cards(player_cards, 1)
@@ -65,7 +71,10 @@ def hitting(player_cards, computer_cards, hit):
 
 
 def result(player, computer):
-    """Checks the total sum of player/computer hands and returns the outcome."""
+    """
+    Checks the total sum of player/computer hands and returns the outcome.
+    """
+    
     if sum(computer) < sum(player) <= 21 or sum(player) <= 21 < sum(computer):
         return "You Win!"
     if sum(player) < sum(computer) <= 21 or sum(computer) <= 21 < sum(player):
@@ -77,7 +86,10 @@ def result(player, computer):
 
 
 def new_game(answer):
-    """Meat and potatoes. Displays player/computer hands and player hits."""
+    """
+    Meat and potatoes. Displays player/computer hands and player hits.
+    """
+    
     if answer == "n":
         print("Thanks for playing!")
         sys.exit()
